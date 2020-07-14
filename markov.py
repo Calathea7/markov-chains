@@ -44,7 +44,16 @@ def make_chains(text_string):
 
     chains = {}
 
-    # your code goes here
+    words = open_and_read_file('green-eggs.txt').split()
+    print(words)
+
+    keys = ()
+
+    for i in range(len(words)-1):
+        keys = (words[i], words[i+1])
+    print(keys)
+
+
 
     return chains
 
