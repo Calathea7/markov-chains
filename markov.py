@@ -12,9 +12,11 @@ def open_and_read_file(file_path):
 
     # your code goes here
 
-    contents = open('green-eggs.txt').read()
+    file = open(file_path)
+    text = file.read()
+    file.close()
 
-    return contents
+    return text
 
 
 def make_chains(text_string):
@@ -62,6 +64,9 @@ def make_text(chains):
     """Return text from chains."""
 
     words = []
+    key = choice(list(chains.keys()))
+    print(key)
+
 
     # your code goes here
 
