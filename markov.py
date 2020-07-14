@@ -65,7 +65,9 @@ def make_text(chains):
 
     words = []
     key = choice(list(chains.keys()))
-    print(key)
+    var = (key[1], key[0])
+    print(var)
+
 
 
     # your code goes here
