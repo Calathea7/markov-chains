@@ -48,6 +48,8 @@ def make_chains(text_string):
 
     words = open_and_read_file('green-eggs.txt').split()
 
+    words.append(None)
+
     for i in range(len(words)-2):
         key = (words[i], words[i+1])
         word = words[i + 2]
@@ -63,16 +65,26 @@ def make_chains(text_string):
 def make_text(chains):
     """Return text from chains."""
 
-    words = []
     key = choice(list(chains.keys()))
-    var = (key[1], key[0])
-    print(var)
+    # print(key)
+    # print(type(key))
 
+    generated_text = [key[0], key[1]]
+
+    new_value = choice(chains[key])
+    # print(new_value)
+
+    while new_value is not None:
+        key = (key[1], new_value)
+        generated_text.append(new_value)
+        new_value = choice(chains[key])
+
+    return " ".join(generated_text)
 
 
     # your code goes here
 
-    return " ".join(words)
+    # return " ".join(words)
 
 
 input_path = "green-eggs.txt"
